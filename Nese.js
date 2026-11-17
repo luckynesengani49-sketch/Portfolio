@@ -6,8 +6,8 @@
   // ===== PASTE YOUR LINKS HERE (inside the quotes) =====
   var PLACEHOLDER = 'paste link here';
   var LINKS = {
-    'Enterprise Network':          'paste link here',
-    'Cybersecurity Projects':      'paste link here',
+    'Enterprise Network':          'https://github.com/luckynesengani49-sketch/Networking_Project',
+    'ThreatLens: SOC Threat Intelligence & Log Analyzer':      'https://github.com/luckynesengani49-sketch/ThreatLens-SOC-Threat-Intelligence-Log-Analyzer',
     'Automated Malware Detection': 'paste link here',
     'Web Development':             'paste link here',
     'LinkedIn Profile':            'https://www.linkedin.com/in/nesengani-l-letswalo-577440385',
