@@ -6,12 +6,15 @@
   // ===== PASTE YOUR LINKS HERE (inside the quotes) =====
   var PLACEHOLDER = 'paste link here';
   var LINKS = {
-    'Enterprise Network':          'https://github.com/luckynesengani49-sketch/Networking_Project',
-    'ThreatLens: SOC Threat Intelligence & Log Analyzer':      'https://github.com/luckynesengani49-sketch/ThreatLens-SOC-Threat-Intelligence-Log-Analyzer',
-    'Automated Malware Detection': 'paste link here',
-    'Web Development':             'paste link here',
-    'LinkedIn Profile':            'https://www.linkedin.com/in/nesengani-l-letswalo-577440385',
-    'GitHub Profile':              'https://github.com/luckynesengani49-sketch'
+    'Enterprise Network': 'https://github.com/luckynesengani49-sketch/Networking_Project',
+    'ThreatLens: SOC Threat Intelligence & Log Analyzer': 'https://github.com/luckynesengani49-sketch/ThreatLens-SOC-Threat-Intelligence-Log-Analyzer',
+    'Network traffic': 'paste link here',
+    'SIEMs' : 'paste link here',
+    'Ticketing': 'paste link here',
+    'IAM' : 'paste link here',
+    'Linux': 'paste link here',
+    'LinkedIn Profile': 'https://www.linkedin.com/in/nesengani-l-letswalo-577440385',
+    'GitHub Profile': 'https://github.com/luckynesengani49-sketch'
   };
 
   var header = document.getElementById('header');
