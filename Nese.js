@@ -1,145 +1,91 @@
-// ====== NESE Network System | Portfolio ======
+/* ==========================================================
+   Certificate zoom (lightbox)
+   Click a certificate card that has an image and the image
+   opens big on the screen. Close it with the X button, by
+   clicking outside the image, or by pressing the Esc key.
+   ========================================================== */
+
 (function () {
-  // WhatsApp number in international format. A leading + is fine, it is removed automatically.
-  var WHATSAPP = '+27710888837'.replace(/\D/g, '');
+  'use strict';
 
-  // ===== PASTE YOUR LINKS HERE (inside the quotes) =====
-  var PLACEHOLDER = 'paste link here';
-  var LINKS = {
-    'Enterprise Network': 'https://github.com/luckynesengani49-sketch/Networking_Project',
-    'ThreatLens: SOC Threat Intelligence & Log Analyzer': 'https://github.com/luckynesengani49-sketch/ThreatLens-SOC-Threat-Intelligence-Log-Analyzer',
-    'Network traffic': 'paste link here',
-    'SIEMs' : 'paste link here',
-    'Ticketing': 'paste link here',
-    'IAM' : 'paste link here',
-    'Linux': 'paste link here',
-    'LinkedIn Profile': 'https://www.linkedin.com/in/nesengani-l-letswalo-577440385',
-    'GitHub Profile': 'https://github.com/luckynesengani49-sketch'
-  };
+  // 1. Build the pop-up once and add it to the page
+  var lightbox = document.createElement('div');
+  lightbox.className = 'cert-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Certificate preview');
 
-  var header = document.getElementById('header');
-  var menuBtn = document.getElementById('menuBtn');
-  var menu = document.getElementById('menu');
+  var bigImage = document.createElement('img');
+  bigImage.alt = '';
 
-  // ---- 3-line menu: open / close ----
-  function setMenu(open) {
-    menu.classList.toggle('open', open);
-    menuBtn.classList.toggle('open', open);
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  var closeBtn = document.createElement('button');
+  closeBtn.className = 'cert-close';
+  closeBtn.type = 'button';
+  closeBtn.setAttribute('aria-label', 'Close certificate');
+  closeBtn.innerHTML = '&times;';
+
+  lightbox.appendChild(bigImage);
+  lightbox.appendChild(closeBtn);
+  document.body.appendChild(lightbox);
+
+  var lastFocused = null;
+
+  // 2. Open and close functions
+  function openLightbox(img) {
+    lastFocused = document.activeElement;
+    bigImage.src = img.currentSrc || img.src;
+    bigImage.alt = img.alt || 'Certificate';
+    lightbox.classList.add('open');
+    document.body.classList.add('lightbox-open');
+    closeBtn.focus();
   }
-  menuBtn.addEventListener('click', function () {
-    setMenu(!menu.classList.contains('open'));
-  });
-  // close after choosing a link
-  menu.addEventListener('click', function (e) {
-    if (e.target.closest('a')) setMenu(false);
-  });
-  // close when clicking outside or pressing Escape
-  document.addEventListener('click', function (e) {
-    if (!header.contains(e.target)) setMenu(false);
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') setMenu(false);
-  });
 
-  // ---- Header shadow once the page is scrolled ----
-  function onScroll() {
-    header.classList.toggle('scrolled', window.scrollY > 10);
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.classList.remove('lightbox-open');
+    if (lastFocused) {
+      lastFocused.focus();
+    }
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  // ---- Project boxes: click a box to open its link ----
-  document.querySelectorAll('.service').forEach(function (box) {
-    box.addEventListener('click', function () {
-      var title = box.getAttribute('data-title');
-      var url = LINKS[title];
-      if (!url || url === PLACEHOLDER) {
-        alert('Link not added yet for: ' + title);
-        return;
+  // 3. Make every certificate card that has an image clickable
+  var cards = document.querySelectorAll('.certificate-card');
+
+  cards.forEach(function (card) {
+    var img = card.querySelector('.certificate-image');
+    if (!img) return; // cards without an image (e.g. the diploma) are skipped
+
+    card.classList.add('zoomable');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Zoom ' + (img.alt || 'certificate'));
+
+    card.addEventListener('click', function () {
+      openLightbox(img);
+    });
+
+    // Keyboard support: Enter or Space opens the certificate
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(img);
       }
-      window.open(url, '_blank', 'noopener,noreferrer');
     });
   });
 
-  // ---- WhatsApp button in the contact section ----
-  document.getElementById('waBtn').href = 'https://wa.me/' + WHATSAPP +
-    '?text=' + encodeURIComponent('Hello NESE, I would like to get in touch.');
+  // 4. Ways to close it
+  closeBtn.addEventListener('click', closeLightbox);
 
-  // ---- Footer year ----
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-
- // ===== CERTIFICATE POPUP =====
-
-var certificateModal = document.getElementById("certificateModal");
-var certificateImage = document.getElementById("certificateImage");
-var closeBtn = document.getElementById("closeCertificate");
-
-// Open certificate
-function openCertificate(imageSrc) {
-
-    if (!imageSrc) {
-        alert("Certificate image path is missing!");
-        return;
+  lightbox.addEventListener('click', function (e) {
+    // clicking the dark background (not the image) closes it
+    if (e.target === lightbox) {
+      closeLightbox();
     }
+  });
 
-    certificateImage.src = imageSrc;
-
-    certificateModal.style.display = "flex";
-
-    document.body.style.overflow = "hidden";
-}
-
-// Close certificate
-function closeCertificate() {
-
-    certificateModal.style.display = "none";
-
-    certificateImage.src = "";
-
-    document.body.style.overflow = "";
-}
-
-// Make certificate cards clickable
-document.querySelectorAll(".certificate-card").forEach(function(card) {
-
-    card.addEventListener("click", function() {
-
-        var imageSrc = card.getAttribute("data-image");
-
-        openCertificate(imageSrc);
-
-    });
-
-});
-
-// Close using X button
-closeBtn.addEventListener("click", function(event) {
-
-    event.stopPropagation();
-
-    closeCertificate();
-
-});
-
-// Close when clicking outside the certificate
-certificateModal.addEventListener("click", function(event) {
-
-    if (event.target === certificateModal) {
-        closeCertificate();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
     }
-
-});
-
-// Close using ESC key
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeCertificate();
-    }
-
-});
- 
+  });
 })();

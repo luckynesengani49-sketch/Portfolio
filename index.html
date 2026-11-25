@@ -1,403 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nesengani L. Letswalo | Portfolio</title>
-  <meta name="description" content="Nesengani L. Letswalo | Portfolio. IT Graduate, Aspiring SOC Analyst, Networking | Database | Cybersecurity.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Nesengani L. Letswalo | Portfolio</title>
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="Nese.css">
+    <link rel="stylesheet" href="Nese.css">
 </head>
+
 <body>
 
-  <!-- HEADER & NAVIGATION -->
-  <header class="header" id="header">
-    <a class="brand" href="#home" aria-label="Nesengani L. Letswalo | Portfolio">
-      <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true">
-        <path class="shield" d="M32 4L56 12V30C56 44 46 54 32 60C18 54 8 44 8 30V12Z"/>
-        <rect class="lock" x="22" y="28" width="20" height="16" rx="3"/>
-        <path class="shackle" d="M26 28v-5a6 6 0 0 1 12 0v5"/>
-      </svg>
-      <span class="brand-text">
-        Nesengani L. Letswalo <span class="brand-sep">|</span> <span class="brand-accent">Portfolio</span>
-      </span>
-    </a>
-
-    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="menu" id="menu" aria-label="Main menu">
-      <a href="#home">Home</a>
-      <a href="#services">My Projects</a>
-      <a href="#why">My Skills</a>
-      <a href="#certificates">My Certificates</a>
-      <a href="#about">About Me</a>
-      <a href="#contact">Contact Details</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <h1 class="hero-title">Nesengani L. Letswalo</h1>
-        <p class="hero-sub">Dip in Information Technology</p>
-        <p class="hero-accent"><span>|</span> Aspiring Cybersecurity Analyst</p>
-        <p class="hero-tag">Networking | Database | Cybersecurity | Information Systems | Azure | AWS</p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#services">My Projects</a>
-          <a class="btn btn-ghost" href="#why">My Skills</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section class="section" id="services">
-      <h2 class="section-title">My <span>Projects</span></h2>
-
-      <div class="services">
-        <button class="service" type="button" data-title="Enterprise Network" data-desc="My enterprise network project.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="9" y="2" width="6" height="5" rx="1"/>
-            <rect x="2" y="17" width="6" height="5" rx="1"/>
-            <rect x="16" y="17" width="6" height="5" rx="1"/>
-            <path d="M12 7v5M5 17v-5h14v5"/>
-          </svg>
-          <span>Networking: Routing, VLANs, Switching, Port Security & WLans</span>
-        </button>
-
-        <button class="service" type="button" data-title="ThreatLens: SOC Threat Intelligence & Log Analyzer" data-desc="My threat intelligence and log analysis project.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/>
-          <circle cx="11.5" cy="11.5" r="2.5"/>
-          <path d="M13.5 13.5L16 16"/>
-          </svg>
-          <span>ThreatLens: SOC Threat Intelligence & Log Analyzer</span>
-        </button>
-
-
-        <button class="service" type="button" data-title="SIEMs" data-desc="My automated malware detection project.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="6" rx="1.5"/>
-            <path d="M7 7h.01"/>
-            <rect x="3" y="14" width="18" height="6" rx="1.5"/>
-            <path d="M7 17h.01"/>
-            <path d="M11 17h2l1-1.5 1.5 3 1-1.5h1.5"/>
-          </svg>
-          <span>SIEM: Uses WAZUH to monitor logs across Windows and Linux VMs</span>
-        </button>
-
-
-        <button class="service" type="button" data-title="Ticketing" data-desc="My web development work.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7z"/>
-            <path d="M9 5v14"/>
-            <path d="M13 10h4"/>
-            <path d="M13 14h3"/>
-          </svg>
-          <span>Ticketing: Manages and tracks support tickets</span>
-        </button>
-
-
-        <button class="service" type="button" data-title="Linux" data-desc="My web development work.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="16" rx="2"/>
-            <path d="M7 10l3 2.5L7 15"/>
-            <path d="M12 15h5"/>
-          </svg>
-          <span>Linux: Scripting, Administration and System Maintenance</span>
-        </button>
-
-
-        <button class="service" type="button" data-title="Network traffic" data-desc="My web development work.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 12h4l2-5 3 10 3-8 2 3h6"/>
-            <circle cx="5" cy="18" r="1.5"/>
-            <circle cx="12" cy="18" r="1.5"/>
-            <circle cx="19" cy="18" r="1.5"/>
-            <path d="M6.5 18h4M13.5 18h4"/>
-          </svg>
-          <span>Network Traffic Analysis: Wireshark capture and analysis DNS, TCP and HTTP traffic</span>
-        </button>
-
-
-      <button class="service" type="button" data-title="IAM" data-desc="My web development work.">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="9" cy="7" r="3.5"/>
-          <path d="M3 19v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 2.5.7"/>
-          <circle cx="17.5" cy="15.5" r="2.5"/>
-          <path d="M19.3 17.3L22 20"/>
-          <path d="M20.5 18.5L22 17"/>
-        </svg>
-        <span>Identity Access & Management: Manages user, group, and role-based access control</span>
-      </button>
-
-
-        <button class="service" type="button" data-title="LinkedIn Profile" data-desc="Connect with me on LinkedIn.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="9" cy="8" r="3.5"/>
-            <path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/>
-            <circle cx="17" cy="9" r="2.5"/>
-            <path d="M17 14c2.8 0 4.5 1.8 4.5 4.5"/>
-          </svg>
-          <span>LinkedIn Profile</span>
-        </button>
-
-        <button class="service" type="button" data-title="GitHub Profile" data-desc="See my code on GitHub.">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="6" cy="5" r="2.5"/>
-            <circle cx="6" cy="19" r="2.5"/>
-            <circle cx="18" cy="8" r="2.5"/>
-            <path d="M6 7.5v9"/>
-            <path d="M18 10.5v1c0 3-3 4-9 5.5"/>
-          </svg>
-          <span>GitHub Profile</span>
-        </button>
-      </div>
-    </section>
-
- <!-- SKILLS SECTION -->
-<section class="section section-alt" id="why">
-    <h2 class="section-title">My <span>Skills</span></h2>
-
-    <div class="skills-grid">
-
-        <!-- Networking -->
-        <div class="skill-card">
-            <div class="circle">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9"/>
-                    <path d="M3 12h18"/>
-                    <path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>
-                </svg>
-            </div>
-            <h3>Networking (CCNA)</h3>
-            <p>
-              My networking skills include configuring, routing, switching, troubleshooting network devices, 
-              implementing security measures, and managing network performance.
-            </p>
-        </div>
-
-        <!-- SQL -->
-        <div class="skill-card">
-            <div class="circle">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <ellipse cx="12" cy="5" rx="8" ry="3"/>
-                    <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>
-                </svg>
-            </div>
-            <h3>SQL & PL/SQL</h3>
-            <p>
-              I have experience with SQL and PL/SQL, including writing queries, stored procedures and functions
-              , and triggers for database management and manipulation. Drawing ERDs, DFDs, Use Case Diagrams and designing 
-              database schemas are also part of my skill set.
-            </p>
-        </div>
-
-        <!-- SOC -->
-        <div class="skill-card">
-            <div class="circle">
-                <strong>24/7</strong>
-            </div>
-            <h3>SOC SIEM</h3>
-            <p>
-              I have experience with Security Operations Center (SOC) and Security Information and Event Management (SIEM)
-               tools for monitoring, analyzing, and responding to security incidents. I also know how the CIA triad works, 
-               which is a fundamental concept in cybersecurity that stands for Confidentiality, Integrity, and Availability.
-               I can also use wireshark for network traffic analysis and monitoring, which is a powerful tool for capturing 
-               and analyzing network packets to identify potential security threats and vulnerabilities.
-            </p>
-        </div>
-
-        <!-- Programming -->
-        <div class="skill-card">
-            <div class="circle">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 7l-5 5 5 5"/>
-                    <path d="M16 7l5 5-5 5"/>
-                    <path d="M14 4l-4 16"/>
-                </svg>
-            </div>
-            <h3>Programming</h3>
-            <p>
-              I have experience with programming languages such as Python, Java, and web development frameworks.
-               I have used Python for scripting, automation, problem solving, and data analysis, 
-               while i have basic knowledge of Java and web development frameworks for building applications and websites.
-            </p>
-        </div>
-
-        <!-- Operating system -->
-        <div class="skill-card">
-            <div class="circle">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                    <path d="M3 9h18"></path>
-                    <circle cx="7" cy="6.5" r="0.6"></circle>
-                    <circle cx="10" cy="6.5" r="0.6"></circle>
-                    <path d="M8 13l-2 2 2 2"></path>
-                    <path d="M12 17h4"></path>
-                </svg>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home">
+                  <img src="profile.png" 
+                  alt="NL">
+                </a>
             </div>
 
-            <h3>Operating System</h3>
-
-            <p>
-                I have experience with various operating systems, including Windows and Linux.
-                I am familiar with their command-line interfaces, file systems, system administration,
-                and security features.
-            </p>
-        </div>
-
-    </div>
-
-    <p class="slogan">Your digital safety, <span>my priority</span></p>
-</section>
-
-<!-- CERTIFICATES SECTION -->
-<section class="section" id="certificates">
-
-    <h2 class="section-title">
-        My <span>Certificates</span>
-    </h2>
-
-    <div class="certificate-grid">
-
-        <!-- Certificate 1 -->
-        <div class="certificate-card"
-             data-image="CCNA-Introduction to network.png">
-
-            <div class="certificate-icon">📰</div>
-
-            <h3>Cisco Certified Network Associate (CCNA)</h3>
-
-            <p>Click to view certificate</p>
-
-        </div>
-
-        <!-- Certificate 2 -->
-        <div class="certificate-card"
-             data-image="CCNA-Introduction to cybersecurity.png">
-
-            <div class="certificate-icon">📰</div>
-
-            <h3>CompTIA Security+</h3>
-
-            <p>Click to view certificate</p>
-
-        </div>
-
-        <!-- Qualification -->
-        <div class="certificate-card"
-             data-image="images/diploma-certificate.jpg">
-
-            <div class="certificate-icon">📰</div>
-
-            <h3>Diploma in Information Technology</h3>
-
-            <p>Click to view qualification</p>
-
-        </div>
-
-    </div>
-
-</section>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-<!-- CERTIFICATE POPUP -->
-<div id="certificateModal" class="certificate-modal">
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <main>
 
-    <button type="button"
-            class="close-btn"
-            id="closeCertificate">&times;</button>
+        <section id="home">
 
-    <img id="certificateImage"
-         class="certificate-image"
-         src=""
-         alt="Certificate">
+            <div class="hero-content">
 
-</div>
+                <p>HELLO, I'M</p>
 
+                <h1>Nesengani L. Letswalo</h1>
 
-    <!-- ABOUT ME SECTION -->
-<section class="section" id="about">
-    <h2 class="section-title">About <span>Me</span></h2>
+                <h2>
+                    Aspiring Cybersecurity Analyst
+                </h2>
 
-      <p class="about-text" style="max-width:700px;margin:0 auto;text-align:center;">
-        I am Nesengani L. Letswalo, an IT graduate in Vaal University of Technology and aspiring Cybersecurity professional and 
-        SOC analyst with skills in networking, databases and cybersecurity. During my studies, I have gained hands-on experience in 
-        various IT domains, including network configuration, database management, and cybersecurity practices such as reconnaissance, threat hunting, and how to
-        respond to an incident. I have also developed a strong understanding of security principles, risk assessment, and vulnerability management.
-        I am passionate about protecting digital assets and ensuring the security of information systems. 
-        My goal is to contribute to the field of cybersecurity by leveraging my technical skills and knowledge to 
-        safeguard organizations against cyber threats.
-      </p>
-</section>
+                <p>
+                    Dip in Information Technology
+                </p>
 
+                <p>
+                    Networking | Database | Cybersecurity |
+                    Information Systems | Azure | AWS
+                </p>
 
-    <!-- CONTACT SECTION -->
-<section class="section" id="contact">
-    <h2 class="section-title">Contact <span>Details</span></h2>
+                <div class="hero-buttons">
+                    <a href="#projects">View My Projects</a>
+                    <a href="#contact">Contact Me</a>
+                </div>
 
-        <div class="contact">
-        <div class="contact-card">
-          <h3>WhatsApp</h3>
-          <p class="number">0710888837</p>
-          <a class="btn btn-wa" id="waBtn" href="https://wa.me/27710888837" target="_blank" rel="noopener noreferrer">
-            Chat on WhatsApp
-          </a>
-        </div>
+            </div>
 
-        <div class="contact">
-        <div class="contact-card">
-          <h3>Email</h3>
-          <p class="number">luckynesengani49@gmail.com</p>
-          <a class="btn btn-wa" id="waBtn" href="mailto:luckynesengani49@gmail.com" target="_blank" rel="noopener noreferrer">
-            Send Email
-          </a>
-        </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>Phone</h3>
-          <p class="number">0710888837 <span>|</span> 0794249791</p>
-          <div class="call-row">
-            <a class="btn" href="tel:0710888837">Call 0710888837</a>
-            <a class="btn btn-ghost" href="tel:0794249791">Call 0794249791</a>
-          </div>
-        </div>
+        </section>
 
 
-</section>
+        <!-- =========================
+             ABOUT ME
+        ========================== -->
+        <section id="about">
 
-</main>
+            <div class="section-heading">
+                <p>ABOUT ME</p>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> NESENGANI L. LETSWALO | Portfolio. All rights reserved.</p>
-  </footer>
+                <h2>
+                    Your digital safety, my priority
+                </h2>
+            </div>
 
-  <!-- SERVICE DETAILS MODAL -->
-  <dialog class="dialog" id="serviceDialog" aria-labelledby="dlgTitle">
-    <h3 id="dlgTitle"></h3>
-    <p id="dlgText"></p>
-    <div class="dialog-actions">
-      <a class="btn btn-wa" id="dlgWa" href="#" target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a>
-      <button class="btn btn-ghost" id="dlgClose" type="button">Close</button>
-    </div>
-  </dialog>
+            <div class="about-content">
 
-  <!-- Scripts -->
-  <script src="Nese.js"></script>
+                <p>
+                    I am Nesengani L. Letswalo, an IT graduate in
+                    Vaal University of Technology and aspiring
+                    Cybersecurity professional and SOC analyst with
+                    skills in networking, databases and cybersecurity.
+                </p>
+
+                <p>
+                    During my studies, I have gained hands-on experience
+                    in various IT domains, including network configuration,
+                    database management, and cybersecurity practices such
+                    as reconnaissance, threat hunting, and how to respond
+                    to an incident.
+                </p>
+
+                <p>
+                    I have also developed a strong understanding of
+                    security principles, risk assessment, and
+                    vulnerability management.
+                </p>
+
+                <p>
+                    I am passionate about protecting digital assets and
+                    ensuring the security of information systems. My goal
+                    is to contribute to the field of cybersecurity by
+                    leveraging my technical skills and knowledge to
+                    safeguard organizations against cyber threats.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+        <section id="skills">
+
+            <div class="section-heading">
+
+                <p>MY SKILLS</p>
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+            </div>
+
+
+            <div class="skills-container">
+
+                <!-- Networking -->
+                <article class="skill-card">
+
+                    <h3>Networking (CCNA)</h3>
+
+                    <p>
+                        My networking skills include configuring,
+                        routing, switching, troubleshooting network
+                        devices, implementing security measures, and
+                        managing network performance.
+                    </p>
+
+                </article>
+
+
+                <!-- SQL -->
+                <article class="skill-card">
+
+                    <h3>SQL &amp; PL/SQL</h3>
+
+                    <p>
+                        I have experience with SQL and PL/SQL, including
+                        writing queries, stored procedures and functions,
+                        and triggers for database management and
+                        manipulation.
+                    </p>
+
+                    <p>
+                        Drawing ERDs, DFDs, Use Case Diagrams and
+                        designing database schemas are also part of
+                        my skill set.
+                    </p>
+
+                </article>
+
+
+                <!-- SOC / SIEM -->
+                <article class="skill-card">
+
+                    <h3>24/7 SOC SIEM</h3>
+
+                    <p>
+                        I have experience with Security Operations
+                        Center (SOC) and Security Information and Event
+                        Management (SIEM) tools for monitoring, analyzing,
+                        and responding to security incidents.
+                    </p>
+
+                    <p>
+                        I also know how the CIA triad works, which is a
+                        fundamental concept in cybersecurity that stands
+                        for Confidentiality, Integrity, and Availability.
+                    </p>
+
+                    <p>
+                        I can also use Wireshark for network traffic
+                        analysis and monitoring, which is a powerful tool
+                        for capturing and analyzing network packets to
+                        identify potential security threats and
+                        vulnerabilities.
+                    </p>
+
+                </article>
+
+
+                <!-- Programming -->
+                <article class="skill-card">
+
+                    <h3>Programming</h3>
+
+                    <p>
+                        I have experience with programming languages such
+                        as Python, Java, and web development frameworks.
+                    </p>
+
+                    <p>
+                        I have used Python for scripting, automation,
+                        problem solving, and data analysis, while I have
+                        basic knowledge of Java and web development
+                        frameworks for building applications and websites.
+                    </p>
+
+                </article>
+
+
+                <!-- Operating Systems -->
+                <article class="skill-card">
+
+                    <h3>Operating System</h3>
+
+                    <p>
+                        I have experience with various operating systems,
+                        including Windows and Linux.
+                    </p>
+
+                    <p>
+                        I am familiar with their command-line interfaces,
+                        file systems, system administration, and security
+                        features.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+        <section id="projects">
+
+            <div class="section-heading">
+
+                <p>MY PROJECTS</p>
+
+                <h2>
+                    Cybersecurity &amp; IT Projects
+                </h2>
+
+            </div>
+
+
+            <div class="projects-container">
+
+                <!-- Networking -->
+                <article class="project-card">
+
+                    <h3>Networking</h3>
+
+                    <p>
+                        Routing, VLANs, Switching, Port Security &amp;
+                        WLANs.
+                    </p>
+                    <a href="https://github.com/luckynesengani49-sketch/Networking_Project" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- ThreatLens -->
+                <article class="project-card">
+
+                    <h3>ThreatLens</h3>
+
+                    <p>
+                        SOC Threat Intelligence &amp; Log Analyzer.
+                    </p>
+                    <a href="https://github.com/luckynesengani49-sketch/ThreatLens-SOC-Threat-Intelligence-Log-Analyzer" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- SIEM -->
+                <article class="project-card">
+
+                    <h3>SIEM</h3>
+
+                    <p>
+                        Uses WAZUH to monitor logs across Windows
+                        and Linux VMs.
+                    </p>
+                    <a href="paste-link-here" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- Ticketing -->
+                <article class="project-card">
+
+                    <h3>Ticketing</h3>
+
+                    <p>
+                        Manages and tracks support tickets.
+                    </p>
+                    <a href="paste-link-here" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- Linux -->
+                <article class="project-card">
+
+                    <h3>Linux</h3>
+
+                    <p>
+                        Scripting, Administration and System
+                        Maintenance.
+                    </p>
+                    <a href="paste-link-here" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- Network Traffic Analysis -->
+                <article class="project-card">
+
+                    <h3>Network Traffic Analysis</h3>
+
+                    <p>
+                        Wireshark capture and analysis of DNS,
+                        TCP and HTTP traffic.
+                    </p>
+                    <a href="paste-link-here" class="view-link" target="_blank">View</a>
+
+                </article>
+
+
+                <!-- Identity Access Management -->
+                <article class="project-card">
+
+                    <h3>Identity Access &amp; Management</h3>
+
+                    <p>
+                        Manages user, group, and role-based access
+                        control.
+                    </p>
+                    <a href="paste-link-here" class="view-link" target="_blank">View</a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOCIAL / PROFILES
+        ========================== -->
+        <section id="profiles">
+
+            <div class="section-heading">
+
+                <p>CONNECT WITH ME</p>
+
+                <h2>
+                    Professional Profiles
+                </h2>
+
+            </div>
+
+            <div class="profile-links">
+
+                <a href="https://www.linkedin.com/in/nesengani-l-letswalo-577440385" target="_blank">
+                    LinkedIn Profile
+                </a>
+
+                <a href="https://github.com/luckynesengani49-sketch" target="_blank">
+                    GitHub Profile
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CERTIFICATES
+        ========================== -->
+        <section id="certificates">
+
+            <div class="section-heading">
+
+                <p>MY CERTIFICATES</p>
+
+                <h2>
+                    Qualifications &amp; Certifications
+                </h2>
+
+            </div>
+
+
+            <div class="certificates-container">
+
+                <!-- CCNA -->
+                <article class="certificate-card">
+                  <img
+                    src="CCNA-Introduction to network.png"
+                    alt="CCNA Certificate"
+                    class="certificate-image">
+
+                    <div class="certificate-icon">
+                        🎖️
+                    </div>
+
+                    <h3>
+                        Cisco Certified Network Associate (CCNA)
+                    </h3>
+
+                </article>
+
+
+                <!-- Security+ -->
+                <article class="certificate-card">
+                  <img
+                    src="CCNA-Introduction to cybersecurity.png"
+                    alt="Security+ Certificate"
+                    class="certificate-image">
+
+                    <div class="certificate-icon">
+                        🎖️
+                    </div>
+
+                    <h3>
+                        CompTIA Security+
+                    </h3>
+
+                </article>
+
+
+                <!-- Diploma -->
+                <article class="certificate-card">
+
+                  <img
+                    src="diploma image here.png"
+                    alt="Diploma in Information Technology"
+                    class="certificate-image">
+
+                  <div class="certificate-icon">
+                      🎓
+                  </div>
+
+                  <h3>
+                      Diploma in Information Technology
+                  </h3>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+        <section id="contact">
+
+            <div class="section-heading">
+
+                <p>CONTACT ME</p>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+            </div>
+
+
+            <div class="contact-container">
+
+                <!-- WhatsApp -->
+                <div class="contact-item">
+
+                    <h3>WhatsApp</h3>
+
+                    <p>
+                        0710888837
+                    </p>
+
+                    <a
+                        href="https://wa.me/27710888837"
+                        target="_blank">
+                        Chat on WhatsApp
+                    </a>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="contact-item">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        luckynesengani49@gmail.com
+                    </p>
+
+                    <a
+                        href="mailto:luckynesengani49@gmail.com">
+                        Send Email
+                    </a>
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="contact-item">
+
+                    <h3>Phone</h3>
+
+                    <p>
+                        0710888837 | 0794249791
+                    </p>
+
+                    <a href="tel:0710888837">
+                        Call 0710888837
+                    </a>
+
+                    <br>
+
+                    <a href="tel:0794249791">
+                        Call 0794249791
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <p>
+            &copy; 2027 NESENGANI L. LETSWALO | Portfolio.
+            All rights reserved.
+        </p>
+
+    </footer>
+          <script src="Nese.js"></script>
+      </body>
+
 </body>
 </html>
