@@ -617,3 +617,78 @@ footer p{
 .cert-close:hover{background:var(--red-dark)}
 
 body.lightbox-open{overflow:hidden}
+
+/* ---------- Networking card background ---------- */
+.skill-networking{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("networking_image.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.skill-networking h3,
+.skill-networking p{
+  color:#fff;
+}
+
+/* ---------- SQL card background ---------- */
+.sql-skill{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("sql_image.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.sql-skill h3,
+.sql-skill p{
+  color:#fff;
+}
+
+/* ---------- SOC / SIEM card background ---------- */
+.soc-siem{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("siem_image.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.soc-siem h3,
+.soc-siem p{
+  color:#fff;
+}
+
+/* ---------- Programming card background ---------- */
+.programming{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("python_image.webp");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.programming h3,
+.programming p{
+  color:#fff;
+}
+
+/* ---------- Operating Systems card background ---------- */
+.operating-systems{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("operating_system.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.operating-systems h3,
+.operating-systems p{
+  color:#fff;
+}
