@@ -1,22 +1,26 @@
 /* ==========================================================
    Nesengani L. Letswalo | Portfolio
-   Style inspired by a clean, modern developer portfolio:
-   light grey hero, big navy headings, red accents.
+   Dark cyber theme: deep navy background, electric blue and
+   cyan accents, silver headings (matches the NESE banner).
    Change the colours below to restyle the whole website.
    ========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap');
 
 :root{
-  --navy:#0b0b2b;        /* headings and main text */
-  --text:#4a4a63;        /* paragraph text */
-  --red:#c8142d;         /* accent colour (buttons, links, hover) */
-  --red-dark:#a30f24;    /* button hover */
-  --grey:#f4f4f5;        /* light grey section background */
+  --bg:#030914;            /* page background (deep navy-black) */
+  --bg-alt:#07152b;        /* alternate section background */
+  --card:#0a1a33;          /* box / card background */
+  --blue:#1e8fff;          /* main electric blue */
+  --blue-dark:#0d5fd1;     /* button gradient / hover */
+  --cyan:#38b6ff;          /* light blue accent */
+  --silver:#e6ecf5;        /* headings and logo text */
+  --muted:#9fb3cc;         /* body text */
   --white:#ffffff;
-  --border:#e4e4ea;
-  --head:76px;           /* header height */
-  --radius:10px;
+  --line:rgba(56,182,255,.28);   /* thin glowing borders */
+  --glow:rgba(30,143,255,.35);   /* glow behind hovered items */
+  --head:76px;            /* header height */
+  --radius:12px;
 }
 
 /* ---------- Reset / base ---------- */
@@ -26,17 +30,19 @@ html{
   scroll-behavior:smooth;
   max-width:100%;
   overflow-x:hidden;
+  background:var(--bg);
 }
 
 body{
   margin:0;
   max-width:100%;
   overflow-x:hidden;
+  padding-top:var(--head);
   font-family:'Poppins',system-ui,sans-serif;
   font-size:1rem;
   line-height:1.7;
-  color:var(--text);
-  background:var(--white);
+  color:var(--muted);
+  background:var(--bg);
 }
 
 img,svg,video{max-width:100%;height:auto}
@@ -45,7 +51,7 @@ a{color:inherit;text-decoration:none}
 
 h1,h2,h3{
   margin:0;
-  color:var(--navy);
+  color:var(--silver);
   font-family:'Poppins',sans-serif;
 }
 
@@ -53,16 +59,20 @@ p{margin:0 0 1rem}
 
 section{scroll-margin-top:var(--head)}
 
-:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 
 /* ---------- Header / navigation ---------- */
 header{
-  position:sticky;
+  position:fixed;
   top:0;
-  z-index:100;
-  background:rgba(244,244,245,.96);
+  left:0;
+  right:0;
+  width:100%;
+  z-index:9000;
+  background:rgba(3,9,20,.92);
   backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 6px 24px rgba(0,0,0,.45);
 }
 
 nav{
@@ -76,7 +86,7 @@ nav{
   gap:1.5rem;
 }
 
-/* Round gradient logo (like the "JM" circle in the design) */
+/* Round logo with a glowing blue ring */
 .logo a{
   display:flex;
   align-items:center;
@@ -84,11 +94,21 @@ nav{
   width:52px;
   height:52px;
   border-radius:50%;
-  background:linear-gradient(135deg,#8fb4ff 0%,#a9a6ff 55%,#c9c4ff 100%);
-  color:var(--navy);
+  overflow:hidden;
+  background:var(--card);
+  border:2px solid var(--blue);
+  box-shadow:0 0 16px var(--glow);
+  color:var(--silver);
   font-weight:600;
   font-size:1.15rem;
   letter-spacing:.02em;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
 }
 
 nav ul{
@@ -104,16 +124,17 @@ nav ul a{
   display:block;
   padding:.4rem 0;
   font-size:.92rem;
-  font-weight:400;
-  color:var(--navy);
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--silver);
   border-bottom:2px solid transparent;
   transition:color .25s,border-color .25s;
 }
 
 nav ul a:hover,
 nav ul a:focus-visible{
-  color:var(--red);
-  border-color:var(--red);
+  color:var(--cyan);
+  border-color:var(--cyan);
 }
 
 /* ---------- Hero ---------- */
@@ -123,8 +144,13 @@ nav ul a:focus-visible{
   display:flex;
   align-items:center;
   padding:4rem max(1.25rem, calc(50% - 600px));
-  background:var(--grey);
   overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(30,143,255,.35),transparent 45%),
+    radial-gradient(circle at 10% 90%,rgba(30,143,255,.18),transparent 40%),
+    linear-gradient(rgba(56,182,255,.06) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,rgba(56,182,255,.06) 1px,transparent 1px) 0 0/48px 48px,
+    var(--bg);
 }
 
 .hero-content{
@@ -138,30 +164,35 @@ nav ul a:focus-visible{
   margin-bottom:.6rem;
   font-size:.85rem;
   font-weight:500;
-  letter-spacing:.22em;
+  letter-spacing:.3em;
   text-transform:uppercase;
-  color:var(--red);
+  color:var(--cyan);
 }
 
 .hero-content h1{
   font-size:clamp(2.3rem,6.5vw,4.6rem);
-  font-weight:400;
+  font-weight:600;
   line-height:1.15;
   letter-spacing:-.01em;
   margin-bottom:1rem;
+  background:linear-gradient(180deg,#ffffff,#9aa9bd 80%,#e6ecf5);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .hero-content h2{
   font-size:clamp(1.25rem,3.4vw,2rem);
-  font-weight:500;
-  color:var(--red);
+  font-weight:600;
+  font-style:italic;
+  color:var(--cyan);
   margin-bottom:1.25rem;
 }
 
 .hero-content > p{
   max-width:520px;
   font-size:.98rem;
-  color:var(--navy);
+  color:var(--silver);
 }
 
 /* Hero buttons */
@@ -177,21 +208,22 @@ nav ul a:focus-visible{
   font-family:'Noto Serif',Georgia,serif;
   font-weight:700;
   font-size:.9rem;
-  color:var(--navy);
-  transition:color .25s,background .25s,transform .25s;
+  color:var(--cyan);
+  transition:color .25s,background .25s,transform .25s,box-shadow .25s;
 }
 
-/* First button = solid red */
+/* First button = glowing blue */
 .hero-buttons a:first-child{
   padding:.8rem 1.6rem;
   color:var(--white);
-  background:var(--red);
-  border-radius:4px;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  border:2px solid var(--blue);
+  border-radius:8px;
 }
 
 .hero-buttons a:first-child:hover{
-  background:var(--red-dark);
   transform:translateY(-2px);
+  box-shadow:0 8px 22px var(--glow);
 }
 
 /* Second button = text link with arrow */
@@ -202,10 +234,9 @@ nav ul a:focus-visible{
   transition:transform .25s;
 }
 
-.hero-buttons a:last-child:hover{color:var(--red)}
+.hero-buttons a:last-child:hover{color:var(--white)}
 .hero-buttons a:last-child:hover::after{transform:translateX(5px)}
 
-/* Decorative circle on the right (replace with a photo if you like) */
 /* Profile photo on the right */
 #home::after{
   content:"";
@@ -217,6 +248,8 @@ nav ul a:focus-visible{
   width:clamp(260px,32vw,420px);
   height:clamp(260px,32vw,420px);
   border-radius:50%;
+  border:3px solid var(--blue);
+  box-shadow:0 0 45px rgba(30,143,255,.45),inset 0 0 20px rgba(30,143,255,.25);
   background-image:url("profile.png");
   background-size:cover;
   background-position:center;
@@ -239,14 +272,17 @@ main > section:not(#home){
   padding:5rem max(1.25rem, calc(50% - 600px));
 }
 
-/* Alternate grey / white backgrounds */
+/* Alternate dark backgrounds */
 #skills,
 #profiles,
-#contact{background:var(--grey)}
+#contact{
+  background:var(--bg-alt);
+  border-block:1px solid var(--line);
+}
 
 #about,
 #projects,
-#certificates{background:var(--white)}
+#certificates{background:var(--bg)}
 
 /* Section heading: small label with line + big title */
 .section-heading{margin-bottom:2.5rem}
@@ -258,23 +294,23 @@ main > section:not(#home){
   margin-bottom:.9rem;
   font-size:.82rem;
   font-weight:500;
-  letter-spacing:.14em;
+  letter-spacing:.2em;
   text-transform:uppercase;
-  color:var(--navy);
+  color:var(--cyan);
 }
 
 .section-heading p::after{
   content:"";
   width:90px;
-  height:1px;
-  background:var(--navy);
-  opacity:.5;
+  height:2px;
+  background:linear-gradient(90deg,var(--cyan),transparent);
 }
 
 .section-heading h2{
   max-width:820px;
   font-size:clamp(1.7rem,4.6vw,2.6rem);
-  font-weight:500;
+  font-weight:600;
+  font-style:italic;
   line-height:1.25;
 }
 
@@ -317,13 +353,13 @@ main > section:not(#home){
 .project-card,
 .certificate-card,
 .contact-item{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-top:3px solid var(--border);
+  background:var(--card);
+  border:1.5px solid var(--line);
+  border-top:3px solid var(--blue);
   border-radius:var(--radius);
   padding:1.75rem 1.5rem;
-  box-shadow:0 6px 20px rgba(11,11,43,.04);
-  transition:transform .3s,box-shadow .3s,border-top-color .3s;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+  transition:transform .3s,box-shadow .3s,border-color .3s;
   overflow-wrap:anywhere;
 }
 
@@ -332,8 +368,8 @@ main > section:not(#home){
 .certificate-card:hover,
 .contact-item:hover{
   transform:translateY(-6px);
-  border-top-color:var(--red);
-  box-shadow:0 14px 34px rgba(11,11,43,.12);
+  border-color:var(--cyan);
+  box-shadow:0 12px 32px var(--glow);
 }
 
 .skill-card h3,
@@ -344,6 +380,7 @@ main > section:not(#home){
   font-size:1.2rem;
   font-weight:600;
   line-height:1.35;
+  color:var(--silver);
 }
 
 .skill-card p,
@@ -352,21 +389,22 @@ main > section:not(#home){
 .contact-item p{
   font-size:.95rem;
   line-height:1.75;
+  color:var(--muted);
 }
 
 .skill-card p:last-child,
 .project-card p:last-child{margin-bottom:0}
 
-/* ---------- Project "View" links (red + underlined) ---------- */
+/* ---------- Project "View" links (blue + underlined) ---------- */
 .view-link{
   display:inline-block;
   margin-top:.25rem;
   font-family:'Noto Serif',Georgia,serif;
   font-weight:700;
   font-size:.9rem;
-  color:var(--red);
+  color:var(--cyan);
   text-decoration:underline;
-  text-decoration-color:var(--red);
+  text-decoration-color:var(--cyan);
   text-decoration-thickness:2px;
   text-underline-offset:5px;
   transition:color .25s,text-decoration-color .25s;
@@ -380,8 +418,8 @@ main > section:not(#home){
 }
 
 .view-link:hover{
-  color:var(--red-dark);
-  text-decoration-color:var(--red-dark);
+  color:var(--white);
+  text-decoration-color:var(--white);
 }
 
 .view-link:hover::after{transform:translateX(5px)}
@@ -397,7 +435,9 @@ main > section:not(#home){
   height:84px;
   margin:0 auto 1.1rem;
   border-radius:50%;
-  background:linear-gradient(135deg,#dbe6ff,#e6e3ff);
+  border:2px solid var(--blue);
+  background:rgba(30,143,255,.1);
+  box-shadow:0 0 22px rgba(30,143,255,.35),inset 0 0 14px rgba(30,143,255,.2);
   font-size:2.3rem;
 }
 
@@ -407,7 +447,7 @@ main > section:not(#home){
   font-family:'Noto Serif',Georgia,serif;
   font-weight:700;
   font-size:.88rem;
-  color:var(--red);
+  color:var(--cyan);
 }
 
 .certificate-card a::after{
@@ -432,21 +472,22 @@ main > section:not(#home){
   font-weight:700;
   font-size:.9rem;
   color:var(--white);
-  background:var(--red);
-  border-radius:4px;
-  transition:background .25s,transform .25s;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  border:2px solid var(--blue);
+  border-radius:8px;
+  transition:transform .25s,box-shadow .25s;
 }
 
 .profile-links a:hover{
-  background:var(--red-dark);
   transform:translateY(-2px);
+  box-shadow:0 8px 22px var(--glow);
 }
 
 /* ---------- Contact ---------- */
 .contact-item{text-align:center}
 
 .contact-item h3{
-  color:var(--red);
+  color:var(--cyan);
   text-transform:uppercase;
   letter-spacing:.1em;
   font-size:1.05rem;
@@ -454,7 +495,7 @@ main > section:not(#home){
 
 .contact-item p{
   font-weight:500;
-  color:var(--navy);
+  color:var(--silver);
 }
 
 .contact-item a{
@@ -465,27 +506,29 @@ main > section:not(#home){
   font-weight:700;
   font-size:.85rem;
   color:var(--white);
-  background:var(--red);
-  border-radius:4px;
-  transition:background .25s,transform .25s;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  border:2px solid var(--blue);
+  border-radius:8px;
+  transition:transform .25s,box-shadow .25s;
 }
 
 .contact-item a:hover{
-  background:var(--red-dark);
   transform:translateY(-2px);
+  box-shadow:0 8px 22px var(--glow);
 }
 
 /* ---------- Footer ---------- */
 footer{
   padding:1.75rem 1.25rem;
   text-align:center;
-  background:var(--navy);
+  background:#020611;
+  border-top:1px solid var(--line);
 }
 
 footer p{
   margin:0;
   font-size:.85rem;
-  color:#c9cbe0;
+  color:var(--muted);
 }
 
 /* ==========================================================
@@ -540,7 +583,7 @@ footer p{
 }
 
 @media (max-width:480px){
-  .hero-content > p:first-child{letter-spacing:.16em}
+  .hero-content > p:first-child{letter-spacing:.18em}
 
   .skill-card,
   .project-card,
@@ -561,7 +604,7 @@ footer p{
   width:100%;
   height:auto;
   margin-bottom:1.1rem;
-  border:1px solid var(--border);
+  border:1px solid var(--line);
   border-radius:6px;
 }
 
@@ -576,7 +619,7 @@ footer p{
   align-items:center;
   justify-content:center;
   padding:1.5rem;
-  background:rgba(11,11,43,.92);
+  background:rgba(0,0,0,.94);
   opacity:0;
   visibility:hidden;
   transition:opacity .25s,visibility .25s;
@@ -590,9 +633,10 @@ footer p{
 .cert-lightbox img{
   max-width:100%;
   max-height:90vh;
+  border:2px solid var(--cyan);
   border-radius:8px;
   background:#fff;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  box-shadow:0 0 50px rgba(30,143,255,.4);
   transform:scale(.92);
   transition:transform .25s;
 }
@@ -607,21 +651,26 @@ footer p{
   height:44px;
   border:none;
   border-radius:50%;
-  background:var(--red);
+  background:var(--blue);
   color:var(--white);
   font-size:1.8rem;
   line-height:1;
   cursor:pointer;
 }
 
-.cert-close:hover{background:var(--red-dark)}
+.cert-close:hover{background:var(--blue-dark)}
 
 body.lightbox-open{overflow:hidden}
+
+/* ==========================================================
+   Card background images
+   (dark navy layer on top keeps the text easy to read)
+   ========================================================== */
 
 /* ---------- Networking card background ---------- */
 .skill-networking{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("networking_image.jpg");
   background-size:cover;
   background-position:center;
@@ -636,7 +685,7 @@ body.lightbox-open{overflow:hidden}
 /* ---------- SQL card background ---------- */
 .sql-skill{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("sql_image.png");
   background-size:cover;
   background-position:center;
@@ -651,7 +700,7 @@ body.lightbox-open{overflow:hidden}
 /* ---------- SOC / SIEM card background ---------- */
 .soc-siem{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("siem_image.png");
   background-size:cover;
   background-position:center;
@@ -666,7 +715,7 @@ body.lightbox-open{overflow:hidden}
 /* ---------- Programming card background ---------- */
 .programming{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("python_image.webp");
   background-size:cover;
   background-position:center;
@@ -681,7 +730,7 @@ body.lightbox-open{overflow:hidden}
 /* ---------- Operating Systems card background ---------- */
 .operating-systems{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("operating_system.jpg");
   background-size:cover;
   background-position:center;
@@ -706,41 +755,46 @@ body.lightbox-open{overflow:hidden}
   background-position:center;
   background-repeat:no-repeat;
 }
+
 .networking-project{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("networking_image.jpg");
 }
+
 .siem-project{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("siem_image.png");
 }
+
 .ticketing-project{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("ticketing_image.png");
 }
+
 .threatlens-project{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("threat_lens.jpg");
 }
+
 .linux-project{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("linux.png");
 }
 
 .project-traffic{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("network_traffic.png");
 }
 
 .project-iam{
   background-image:
-    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    linear-gradient(rgba(3,9,20,.78), rgba(3,9,20,.78)),
     url("IAM_image.png");
 }
 
@@ -760,27 +814,4 @@ body.lightbox-open{overflow:hidden}
 .project-iam h3,
 .project-iam p{
   color:#fff;
-}
-
-/* Lighter "View" link so it stays visible on the dark image */
-.networking-project .view-link,
-.siem-project .view-link,
-.ticketing-project .view-link,
-.threatlens-project .view-link,
-.linux-project .view-link,
-.project-traffic .view-link,
-.project-iam .view-link{
-  color:#ff6b7d;
-  text-decoration-color:#ff6b7d;
-}
-
-.networking-project .view-link:hover,
-.siem-project .view-link:hover,
-.ticketing-project .view-link:hover,
-.threatlens-project .view-link:hover,
-.linux-project .view-link:hover,
-.project-traffic .view-link:hover,
-.project-iam .view-link:hover{
-  color:#fff;
-  text-decoration-color:#fff;
 }
