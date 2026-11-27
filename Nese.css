@@ -692,3 +692,95 @@ body.lightbox-open{overflow:hidden}
 .operating-systems p{
   color:#fff;
 }
+
+
+/* ---------- Project card backgrounds ---------- */
+.networking-project,
+.siem-project,
+.ticketing-project,
+.threatlens-project,
+.linux-project,
+.project-traffic,
+.project-iam{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.networking-project{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("networking_image.jpg");
+}
+.siem-project{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("siem_image.png");
+}
+.ticketing-project{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("ticketing_image.png");
+}
+.threatlens-project{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("threat_lens.jpg");
+}
+.linux-project{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("linux.png");
+}
+
+.project-traffic{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("network_traffic.png");
+}
+
+.project-iam{
+  background-image:
+    linear-gradient(rgba(11,11,43,.75), rgba(11,11,43,.75)),
+    url("IAM_image.png");
+}
+
+/* White text so it shows on the dark image */
+.networking-project h3,
+.networking-project p,
+.siem-project h3,
+.siem-project p,
+.ticketing-project h3,
+.ticketing-project p,
+.threatlens-project h3,
+.threatlens-project p,
+.linux-project h3,
+.linux-project p,
+.project-traffic h3,
+.project-traffic p,
+.project-iam h3,
+.project-iam p{
+  color:#fff;
+}
+
+/* Lighter "View" link so it stays visible on the dark image */
+.networking-project .view-link,
+.siem-project .view-link,
+.ticketing-project .view-link,
+.threatlens-project .view-link,
+.linux-project .view-link,
+.project-traffic .view-link,
+.project-iam .view-link{
+  color:#ff6b7d;
+  text-decoration-color:#ff6b7d;
+}
+
+.networking-project .view-link:hover,
+.siem-project .view-link:hover,
+.ticketing-project .view-link:hover,
+.threatlens-project .view-link:hover,
+.linux-project .view-link:hover,
+.project-traffic .view-link:hover,
+.project-iam .view-link:hover{
+  color:#fff;
+  text-decoration-color:#fff;
+}
